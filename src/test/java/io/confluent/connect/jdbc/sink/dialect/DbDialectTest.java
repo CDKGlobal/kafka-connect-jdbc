@@ -133,4 +133,9 @@ public class DbDialectTest {
     assertEquals(GenericDialect.class, DbDialect.fromConnectionString("jdbc:other://host:42").getClass());
   }
 
+  @Test
+  public void detectSnowflake() {
+    assertEquals(SnowflakeDialect.class, DbDialect.fromConnectionString("jdbc:snowflake://what.snowflakecomputing.com/").getClass());
+  }
+
 }

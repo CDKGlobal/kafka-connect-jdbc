@@ -264,6 +264,8 @@ public abstract class DbDialect {
         return new MySqlDialect();
       case "postgresql":
         return new PostgreSqlDialect();
+      case "snowflake":
+        return new SnowflakeDialect();
       default:
         return new GenericDialect();
     }
