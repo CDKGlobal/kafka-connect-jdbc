@@ -134,8 +134,12 @@ public class DbDialectTest {
   }
 
   @Test
+  public void detectVertica() {
+    assertEquals(VerticaDialect.class, DbDialect.fromConnectionString("jdbc:vertica://host:5433/db").getClass());
+  }
+
+  @Test
   public void detectSnowflake() {
     assertEquals(SnowflakeDialect.class, DbDialect.fromConnectionString("jdbc:snowflake://what.snowflakecomputing.com/").getClass());
   }
-
 }
